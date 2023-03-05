@@ -1,0 +1,221 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
+    font-family: var(--font-medium);
+    margin: 2rem;
+    background-color: var(--light-grayish-blue);
+}
+
+:root {
+    --very-dark-grayish-blue: #48556a;
+    --desaturated-dark-bluee: #6d7f97;
+    --grayish-blue: #9eafc2;
+    --light-grayish-blue: #ecf2f8;
+    --font-bold: manropebold, sans-serif;
+    --font-medium: manropemedium, sans-serif;
+}
+
+@font-face {
+    font-family: ManropeBold;
+    src: url("fonts/Manrope-Bold.woff2")format("woff2"),
+        url("fonts/Manrope-Bold.woff")format("woff"),
+        url("fonts/Manrope-Bold.truetype")format("ttf");
+}
+
+@font-face {
+    font-family: ManropeMedium;
+    src: url("fonts/Manrope-Medium.woff2")format("woff2"),
+        url("fonts/Manrope-Medium.woff")format("woff"),
+        url("fonts/Manrope-Medium.truetype")format("ttf");
+}
+
+.subtitle {
+    letter-spacing: 0.05rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.subtitle~p {
+    font-size: 0.81rem;
+}
+
+.image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    object-position: 0 -15px;
+}
+
+.main {
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.contain {
+    padding: 2rem 1.75rem;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+}
+
+[class="btn-share"] {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    border: none;
+    background: none;
+    place-items: center;
+    background-color: var(--light-grayish-blue);
+    border-radius: 50%;
+}
+
+.img-profile {
+    width: 2.5rem;
+    border-radius: 50%;
+    object-fit: scale-down;
+}
+
+.content-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.name-user {
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+.name-user~p {
+    font-size: 1em;
+    color: var(--very-dark-grayish-blue);
+}
+
+.share-container {
+    display: flex;
+    padding: 1rem 1.75rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.share {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.share h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    font-weight: 100;
+    color: var(--grayish-blue);
+}
+
+.btn-share:hover .share-svg path {
+    fill: #ecf2f8;
+}
+
+.btn-share:hover {
+    background-color: var(--desaturated-dark-bluee);
+}
+
+.share-container .btn-share {
+    background-color: var(--desaturated-dark-bluee);
+}
+
+.share-container .btn-share .share-svg path {
+    fill: #ecf2f8;
+}
+
+@media screen and (min-width: 48rem) {
+    body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+    }
+
+    .share-container {
+        position: absolute;
+        right: -55px;
+        bottom: 100px;
+        border-radius: 0.625rem;
+        z-index: 5;
+    }
+
+    .share-container::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: -5;
+        position: absolute;
+        left: calc(50% - calc(1rem / 2));
+        bottom: -0.5rem;
+        border-radius: 5px;
+        transform: rotate(45deg);
+        background-color: inherit;
+    }
+
+    .share-container .btn-share {
+        display: none;
+    }
+
+    .main {
+        width: 45.625rem;
+        display: flex;
+        overflow: visible;
+    }
+
+    .image {
+        height: 18rem;
+        object-position: 0;
+        width: 285px;
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .contain {
+        padding: 0;
+    }
+
+    .profile-container {
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .block {
+        position: relative;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .subtitle~p {
+        font-size: 0.825rem;
+    }
+}
+
+
